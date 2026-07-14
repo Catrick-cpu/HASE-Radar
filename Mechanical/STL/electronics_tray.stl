@@ -1,0 +1,86 @@
+solid aeris_electronics_tray
+  facet normal 0 0 -1
+    outer loop
+      vertex 0 0 0
+      vertex 280 0 0
+      vertex 280 180 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 0 0 0
+      vertex 280 180 0
+      vertex 0 180 0
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 0 0 12
+      vertex 280 180 12
+      vertex 280 0 12
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 0 0 12
+      vertex 0 180 12
+      vertex 280 180 12
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 0 0 0
+      vertex 280 0 12
+      vertex 280 0 0
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 0 0 0
+      vertex 0 0 12
+      vertex 280 0 12
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 0 180 0
+      vertex 280 180 0
+      vertex 280 180 12
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 0 180 0
+      vertex 280 180 12
+      vertex 0 180 12
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex 0 0 0
+      vertex 0 180 0
+      vertex 0 180 12
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex 0 0 0
+      vertex 0 180 12
+      vertex 0 0 12
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 280 0 0
+      vertex 280 0 12
+      vertex 280 180 12
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 280 0 0
+      vertex 280 180 12
+      vertex 280 180 0
+    endloop
+  endfacet
+endsolid aeris_electronics_tray

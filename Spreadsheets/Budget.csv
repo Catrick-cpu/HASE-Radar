@@ -1,0 +1,71 @@
+Category,Subcategory,Item,Planned_USD,Actual_USD,Notes
+Electronics,RF ICs,Phase Shifters 32x HMC647A,1104.00,,Main cost driver - order early
+Electronics,RF ICs,LNA 16x HMC1040,805.50,,High-priority item
+Electronics,RF ICs,PA HMC451,129.00,,Order 2 (1 spare)
+Electronics,RF ICs,Mixer HMC213B,108.40,,Order 2
+Electronics,RF ICs,VCO HMC733,89.00,,Order 2
+Electronics,RF ICs,PLL ADF4159,55.60,,Order 2
+Electronics,RF ICs,RF IC subtotal,2291.50,,
+Electronics,Digital,STM32H743 MCU,35.70,,
+Electronics,Digital,Raspberry Pi 5 8GB,80.00,,Processing computer
+Electronics,Digital,ADS8661 ADC,23.70,,
+Electronics,Digital,OCXO 10MHz,24.50,,
+Electronics,Digital,DC-DC LT8612,17.90,,
+Electronics,Digital,DC-DC LT8607,11.20,,
+Electronics,Digital,DC-DC TPS65133,8.40,,
+Electronics,Digital,LM7812,2.50,,Consider switching regulator upgrade
+Electronics,Digital,Digital subtotal,203.90,,
+Electronics,Passive,Capacitors,40.20,,Estimate for all caps
+Electronics,Passive,Resistors,4.45,,
+Electronics,Passive,Inductors,9.65,,
+Electronics,Passive,Thermistors + LEDs + Switches,3.50,,
+Electronics,Passive,Passive subtotal,57.80,,
+Electronics,Connectors,SMA Female Edge Launch,48.50,,
+Electronics,Connectors,2.92mm Female Edge Launch,358.00,,Major cost - needed for all antenna feeds
+Electronics,Connectors,XT60 Power Connectors,4.50,,
+Electronics,Connectors,USB Micro-B,3.60,,
+Electronics,Connectors,Misc connectors,20.00,,DF13 JST headers
+Electronics,Connectors,Connector subtotal,434.60,,
+Electronics,Total,,2987.80,,
+PCBs,Fabrication,AERIS Main Control Board 160x100,90.00,,FR4 4-layer x2 from JLCPCB
+PCBs,Fabrication,AERIS RF Frontend 100x60 RO4003C,240.00,,Rogers board from PCBWay - most expensive
+PCBs,Fabrication,AERIS Power Board 100x80,36.00,,FR4 2-layer x2 from JLCPCB
+PCBs,Fabrication,AERIS Phase Shifter Board 120x80,260.00,,Rogers/FR4 hybrid x2 from PCBWay
+PCBs,Total,,626.00,,
+Cables,RF Cables,RG-405 Semi-rigid 10cm x10,125.00,,PA to divider connections
+Cables,RF Cables,2.92mm Flexible Phase-matched x20,370.00,,Antenna feed cables - CRITICAL
+Cables,Power,AWG12 power cable,8.00,,
+Cables,Control,USB cable 0.3m,9.00,,
+Cables,Total,,512.00,,
+Mechanical,Enclosure,Aluminium Enclosure 300x200x100,45.00,,Or 3D print for prototype
+Mechanical,Mounting,L-bracket tripod adapter,17.00,,
+Mechanical,Hardware,M3 fastener kit,15.00,,
+Mechanical,Thermal,Heatsink and thermal paste,15.00,,Required for LM7812 and PA
+Mechanical,Fan,80mm 5V cooling fan,17.00,,
+Mechanical,Total,,109.00,,
+Test Equipment,Attenuators,SMA attenuators 10dB 20dB,105.00,,For loopback test
+Test Equipment,Terminators,50-ohm SMA terminators,22.50,,
+Test Equipment,Adapters,SMA-N adapter,13.00,,
+Test Equipment,Total,,140.50,,
+Consumables,Solder,SAC305 solder paste,18.00,,
+Consumables,Chemicals,IPA flux remover,12.50,,
+Consumables,Thermal,Thermal paste,8.00,,
+Consumables,Safety,ESD mat + wriststrap,25.00,,Required for RF IC handling
+Consumables,Misc,Kapton tape other,12.00,,
+Consumables,Total,,75.50,,
+,,,,,
+TOTAL BASE BUDGET,,TOTAL,4450.80,,Well under $8000 limit
+,,,,,
+Contingency (10%),,Contingency,445.08,,For price changes and mistakes
+,,,,,
+TOTAL WITH CONTINGENCY,,,4895.88,,
+,,,,,
+MARGIN TO $8000 LIMIT,,,3104.12,,Available for upgrades
+,,,,,
+Upgrade Options,,,,,
+Upgrade,SDR,USRP B210 SDR backend,1300.00,,Replaces RPi5 for more flexible IF processing
+Upgrade,Oscillator,GPS-disciplined OCXO,250.00,,Better frequency accuracy
+Upgrade,Processing,NVIDIA Jetson Nano 4GB,150.00,,Replace RPi5 for CUDA processing
+Upgrade,Test,VNA access rental (2 days),400.00,,For proper RF characterization
+Upgrade,Enclosure,Machined Al enclosure custom,300.00,,Professional finish
+Upgrade,Total,All upgrades,2400.00,,Still under $8000 total

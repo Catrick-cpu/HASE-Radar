@@ -1,0 +1,70 @@
+# AERIS-10P Radar Control Configuration
+# Edit this file to match your hardware setup
+# -------------------------------------------
+
+radar:
+  serial_port: /dev/ttyACM0    # Linux/Mac: /dev/ttyACM0  |  Windows: COM3
+  baud_rate: 115200
+  connect_timeout_s: 5.0
+  reconnect_on_error: true
+
+rf:
+  freq_start_hz: 10000000000   # 10.000 GHz chirp start
+  freq_stop_hz:  10100000000   # 10.100 GHz chirp stop
+  sweep_time_us: 1000          # 1 ms per chirp
+  pa_enabled: false            # PA off at startup (safety)
+
+beam:
+  default_az_deg: 0.0          # broadside
+  default_el_deg: 0.0
+  min_az_deg: -45.0
+  max_az_deg:  45.0
+  min_el_deg: -30.0
+  max_el_deg:  30.0
+  az_step_deg:  5.0            # scan step size
+
+array:
+  n_elements: 16
+  element_spacing_mm: 15.0
+  wavelength_mm: 29.85
+  rows: 4
+  cols: 4
+  calibration_file: calibration_tx.npy  # null = no calibration
+
+processing:
+  adc_sample_rate_hz: 8000
+  n_chirps_per_cpi: 100        # coherent processing interval
+  fft_size: 8192
+  max_range_m: 4000
+  range_resolution_m: 1.5
+  cfar_threshold_db: 15.0
+  cfar_guard_cells: 4
+  cfar_training_cells: 16
+  clutter_filter: dc_removal   # dc_removal | mti | none
+
+display:
+  update_rate_hz: 2.0
+  range_max_display_m: 3000
+  velocity_max_display_mps: 50.0
+  colormap: plasma
+  show_ppi: true
+  show_rdm: true
+  show_range_profile: true
+
+logging:
+  level: INFO                  # DEBUG | INFO | WARNING | ERROR
+  log_file: aeris_session.log
+  save_raw_data: true          # save HDF5 data files
+  data_dir: ./data
+  max_file_size_mb: 500
+
+safety:
+  max_pa_temp_c: 70.0          # PA temperature shutdown threshold
+  min_pll_lock_required: true  # abort if PLL not locked
+
+regulatory:
+  # German Klasse A amateur radio compliance
+  callsign: "DL0EXAMPLE"       # Replace with your actual callsign
+  id_interval_s: 600           # Station identification every 10 minutes (mandatory)
+  id_method: software_cw       # software_cw | manual
+  max_tx_power_w: 1.0          # Software-enforced TX power limit

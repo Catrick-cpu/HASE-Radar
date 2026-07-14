@@ -1,0 +1,59 @@
+Phase,Task_ID,Task,Start_Date,End_Date,Duration_weeks,Dependencies,Status,Notes
+Research,T001,German regulatory research (AFuG AFuV BNetzA),2026-07-14,2026-07-21,1,,Complete,Done - see Regulatory_Analysis_Germany.md
+Research,T002,Component availability check (Mouser DigiKey),2026-07-14,2026-07-21,1,,Complete,Check HMC647A stock - potential long lead time
+Research,T003,Contact BNetzA Referat 221 (informal),2026-07-21,2026-07-28,1,T001,Todo,Write inquiry about experimental radar permit
+Research,T004,FMCW design trade-off study,2026-07-14,2026-07-21,1,,Complete,FMCW selected over pulse - documented in design history
+Research,T005,Antenna simulation setup (OpenEMS),2026-07-21,2026-08-04,2,,Todo,Run openems_antenna_simulation.py to verify patch dimensions
+Design,T010,System architecture finalization,2026-07-14,2026-07-21,1,,Complete,See 03_System_Design_Document.md
+Design,T011,RF link budget calculation and verification,2026-07-14,2026-07-21,1,,Complete,See link_budget_calculator.py - verified 3km range
+Design,T012,Phase shifter array algorithm design,2026-07-21,2026-07-28,1,,Complete,Beamforming code in phase_shifter.c
+Design,T013,PCB schematic design - Main Board,2026-07-28,2026-08-11,2,T010,Todo,Import schematic.json into EasyEDA then complete layout
+Design,T014,PCB schematic design - RF Frontend,2026-07-28,2026-08-11,2,T010,Todo,Rogers RO4003C board - most critical design
+Design,T015,PCB schematic design - Power Board,2026-07-28,2026-08-04,1,T010,Todo,Simple 2-layer design
+Design,T016,PCB schematic design - Phase Shifter Board,2026-08-04,2026-08-18,2,T013,Todo,Hybrid Rogers/FR4 design
+Design,T017,Antenna patch EM simulation,2026-08-04,2026-08-18,2,T005,Todo,Use OpenEMS to verify S11 < -15 dB at 10.05 GHz
+Design,T018,PCB layout - Power Board,2026-08-04,2026-08-11,1,T015,Todo,Start with simplest board
+Design,T019,PCB layout - Main Control Board,2026-08-11,2026-08-25,2,T013,Todo,4-layer mixed signal layout
+Design,T020,PCB layout - RF Frontend,2026-08-18,2026-09-08,3,T014,Todo,Most complex - RF trace impedance control critical
+Design,T021,PCB layout - Phase Shifter Board,2026-08-25,2026-09-08,2,T016,Todo,Rogers/FR4 hybrid stackup
+Design,T022,PCB layout - Antenna Panel,2026-08-11,2026-08-25,2,T017,Todo,4x4 patch array with Wilkinson dividers
+Design,T023,3D mechanical design (FreeCAD),2026-07-28,2026-08-11,2,,Complete,STL files created - print prototype to verify fit
+Procurement,T030,Order long-lead RF ICs (HMC647A etc),2026-07-21,2026-07-21,0,T002,Todo,ORDER IMMEDIATELY - up to 8 week lead time!
+Procurement,T031,Order MCU STM32H743 Raspberry Pi,2026-07-21,2026-07-21,0,,Todo,Usually in stock at Mouser
+Procurement,T032,Order passive components,2026-08-11,2026-08-11,0,T019,Todo,Order when PCB layout starts
+Procurement,T033,Order PCBs from PCBWay (Rogers boards),2026-09-08,2026-09-29,3,T020,Todo,3-4 weeks for Rogers RO4003C boards
+Procurement,T034,Order PCBs from JLCPCB (FR4 boards),2026-09-08,2026-09-22,2,T019,Todo,1-2 weeks for standard FR4
+Procurement,T035,Receive and incoming inspection of components,2026-09-22,2026-10-06,2,T030,Todo,Check quantities visual inspection
+Procurement,T036,Receive PCBs inspection,2026-10-06,2026-10-13,1,T033,Todo,Check dimensions impedance specs
+Assembly,T040,Power board PCB assembly and test,2026-10-13,2026-10-20,1,T036,Todo,Start with simplest board - test 5V 3.3V outputs
+Assembly,T041,Main control board assembly,2026-10-20,2026-11-03,2,T036,Todo,STM32H743 LQFP-144 fine pitch
+Assembly,T042,STM32 firmware flash and basic test,2026-11-03,2026-11-10,1,T041,Todo,SPI test Blinky USB enumeration
+Assembly,T043,ADF4159 VCO assembly and test,2026-11-03,2026-11-10,1,T041,Todo,Verify 10 GHz output with spectrum analyzer
+Assembly,T044,RF frontend board assembly,2026-11-03,2026-11-17,2,T036,Todo,HMC647A QFN assembly - use hot air
+Assembly,T045,Phase shifter board assembly,2026-11-10,2026-11-24,2,T036,Todo,16x HMC647A per board
+Assembly,T046,Antenna panel PCB assembly,2026-11-03,2026-11-10,1,T036,Todo,Install SMA edge-launch connectors
+Integration,T050,System power-on test (all boards),2026-11-24,2026-12-01,1,T044,Todo,Check all voltage rails before connecting RF
+Integration,T051,Phase shifter SPI communication test,2026-12-01,2026-12-08,1,T045,Todo,Write all 64 phase codes read verify
+Integration,T052,FMCW chirp verification,2026-12-01,2026-12-08,1,T043,Todo,Capture chirp with oscilloscope verify 100 MHz sweep
+Integration,T053,TX power measurement,2026-12-08,2026-12-15,1,T052,Todo,PA output power at 10.05 GHz with power meter
+RF_Test,T060,Antenna S11 measurement,2026-12-08,2026-12-15,1,T046,Todo,VNA S11 on each element target < -15 dB
+RF_Test,T061,Phase shifter calibration measurement,2026-12-15,2026-12-22,1,T051,Todo,Measure all 64 states per element
+RF_Test,T062,Phase calibration table upload to firmware,2026-12-22,2026-12-29,1,T061,Todo,Store in STM32 flash via USB command
+RF_Test,T063,FMCW loopback range test (10m in lab),2026-12-22,2026-12-29,1,T052,Todo,Corner reflector at 10m verify 10m detection
+RF_Test,T064,Beam steering verification test,2026-12-29,2027-01-05,1,T062,Todo,Steer to 0 15 30 45 deg verify with calibrated Rx
+Software,T070,Python control software integration test,2026-11-17,2026-11-24,1,,Todo,aeris_control.py with simulated hardware
+Software,T071,FMCW processing pipeline test (synthetic),2026-11-17,2026-11-24,1,,Todo,demo_no_hardware.py - verify range Doppler
+Software,T072,End-to-end software test with hardware,2027-01-05,2027-01-12,1,T063,Todo,Full pipeline: chirp -> ADC -> FFT -> detect -> display
+Field_Test,T080,Short-range field test 50-100m,2027-01-12,2027-01-19,1,T072,Todo,Corner reflector in parking lot
+Field_Test,T081,Medium-range test 500m-1km,2027-01-19,2027-01-26,1,T080,Todo,Vehicle target at measured distance
+Field_Test,T082,Long-range test 2-3km,2027-01-26,2027-02-09,2,T081,Todo,BNetzA notification first! Open field required.
+Documentation,T090,Finalize all engineering documentation,2027-01-12,2027-02-09,4,,Todo,Update with measured results
+Documentation,T091,Write user manual,2027-01-26,2027-02-09,2,,Todo,Operating instructions for amateur radio users
+Documentation,T092,GitHub repository setup and publish,2027-02-09,2027-02-16,1,,Todo,Open-source release
+Documentation,T093,DARC/amateur radio community writeup,2027-02-16,2027-02-23,1,,Todo,Share with amateur radio community
+Milestone,M001,Design Complete,2026-09-08,2026-09-08,0,T022,Todo,All PCB designs ready for fabrication
+Milestone,M002,Components Received,2026-10-13,2026-10-13,0,T035,Todo,All parts on hand
+Milestone,M003,First Power-On,2026-11-24,2026-11-24,0,T050,Todo,System powered and functional
+Milestone,M004,First Radar Detection,2026-12-29,2026-12-29,0,T063,Todo,First FMCW range detection in lab
+Milestone,M005,Field Operation,2027-01-26,2027-01-26,0,T081,Todo,First outdoor field test
+Milestone,M006,Project Complete,2027-02-23,2027-02-23,0,T092,Todo,Documentation published on GitHub

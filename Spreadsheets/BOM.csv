@@ -1,0 +1,61 @@
+Line,Category,Ref_Des,Description,Manufacturer,MPN,Supplier,Supplier_PN,Qty,Unit_Price_USD,Total_Price_USD,Package,Notes,Alternative_MPN
+1,RF IC,U2-U17,6-bit Digital Phase Shifter 10-14GHz,Analog Devices (Hittite),HMC647ALP5E,Mouser,597-HMC647ALP5E,32,34.50,1104.00,QFN-32 5x5mm,TX+RX arrays 16 each,MAAP-011172
+2,RF IC,U1,X-band Power Amplifier +29dBm,Analog Devices (Hittite),HMC451LS6GE,Mouser,597-HMC451LS6GE,2,64.50,129.00,SMT LS-6,1 operational + 1 spare,HMC943
+3,RF IC,U18-U33,Low Noise Amplifier 8-12GHz NF=1.5dB,Analog Devices (Hittite),HMC1040LP4E,Mouser,597-HMC1040LP4E,18,44.75,805.50,QFN-24 4x4mm,16 + 2 spare,TQL9092
+4,RF IC,U50,Double-Balanced Mixer 8-26GHz,Analog Devices (Hittite),HMC213B,Mouser,597-HMC213B,2,54.20,108.40,QFN-16 4x4mm,1 operational + 1 spare,HMC264
+5,RF IC,U3,VCO 9.5-11GHz +17dBm,Analog Devices (Hittite),HMC733LP6CE,Mouser,597-HMC733LP6CE,2,44.50,89.00,LP-6 LCC,1 + spare,HMC-SXX112
+6,RF IC,U2_PLL,FMCW PLL Ramp Generator 13GHz,Analog Devices,ADF4159CCPZ,Mouser,584-ADF4159CCPZ,2,27.80,55.60,CP-40-3,ADF4159 1 + spare,ADF4169
+7,MCU,U1_MCU,STM32H743 480MHz Cortex-M7,STMicroelectronics,STM32H743ZIT6,Mouser,511-STM32H743ZIT6,2,17.85,35.70,LQFP-144,Main control MCU,STM32H743ZIT6TR
+8,Processing,SBC1,Raspberry Pi 5 8GB,Raspberry Pi,SC1112,Mouser,2648-SC1112,1,80.00,80.00,SBC,DSP processing computer,Jetson Nano 4GB ($149)
+9,ADC,U_ADC,16-bit 1MSPS ADC SPI,Texas Instruments,ADS8661IRGAT,Mouser,595-ADS8661IRGAT,2,11.85,23.70,VQFN-20,16-bit for IF digitization,ADS9224R
+10,Oscillator,X1,OCXO 10MHz +-0.01ppm,Abracon,AOCJY-10.000MHZ-T,Mouser,815-AOCJY10.000MHZ,1,24.50,24.50,DIP-4,High-stability frequency reference,GPSDO ($250)
+11,DC-DC,U_5V,Buck Converter 24V to 5V 5A,Analog Devices,LT8612EMSE,Mouser,584-LT8612EMSE,2,8.95,17.90,MSOP-16,Main 5V supply,TPS54560
+12,DC-DC,U_3V3,Buck Converter 5V to 3.3V 3A,Analog Devices,LT8607IMSE,Mouser,584-LT8607IMSE,2,5.60,11.20,SOT-23-6,Logic supply,TPS62130
+13,DC-DC,U_RF,Dual Output +-5V DC-DC,Texas Instruments,TPS65133QRGRTQ1,Mouser,595-TPS65133QRGRTQ1,2,4.20,8.40,HVSSOP-20,RF bias supply,TPS65130
+14,LDO,U_12V,12V LDO for PA drain,STMicroelectronics,LM7812ACT,Mouser,511-LM7812ACT,2,1.25,2.50,TO-220,PA 12V supply (add heatsink),LT3080 (better)
+15,Connector,J_RF_SMA,SMA Female Edge Launch 18GHz,Southwest Microwave,1092-01A-6,Mouser,712-1092-01A-6,10,4.85,48.50,Edge Launch,For PCB RF connections,Taoglas SMA-JBA
+16,Connector,J_RF_292,2.92mm Female Edge Launch 40GHz,Southwest Microwave,1092-06A-5,Mouser,712-1092-06A-5,40,8.95,358.00,Edge Launch,For antenna feeds (phase-matched required),Rosenberger 32K243
+17,Connector,J_POWER,XT60 Male Connector,Amass,XT60-M,Amazon,B07VRZPFSS,3,1.50,4.50,Panel Mount,24V power input,Deans T-plug
+18,Connector,J_USB,Micro-USB Type B Female,Amphenol,10103594-0001LF,Mouser,649-10103594-0001LF,3,1.20,3.60,SMD,USB CDC control interface,USB-B variant
+19,Connector,J_POWER2,DF13-6P-1.25H Board Connector,Hirose,DF13-6P-1.25H,Mouser,798-DF13-6P-1.25H,5,1.85,9.25,1.25mm pitch,Power distribution,JST PH
+20,Connector,J_DEBUG,SWD JTAG Header 20-pin,Samtec,FTSH-110-01-L-DV,Mouser,200-FTSH11001LDV,2,3.50,7.00,2x10 1.27mm,Firmware programming,TC2030
+21,Capacitor,C_BULK,47uF 10V MLCC X5R,Murata,GRM32ER61A476ME20L,Mouser,81-GRM32ER61A476ME2L,30,0.45,13.50,1210,Bulk supply decoupling,Samsung CL32A476MBJNNNE
+22,Capacitor,C_100N,100nF 50V X7R 0402,Yageo,CC0402KRX7R9BB104,Mouser,603-CC0402KRX7R9BB104,200,0.05,10.00,0402,General bypass,Samsung CL05B104KO5NNNC
+23,Capacitor,C_10N,10nF 50V X7R 0402,Yageo,CC0402KRX7R9BB103,Mouser,603-CC0402KRX7R9BB103,100,0.04,4.00,0402,High-freq decoupling,TDK C1005X7R1H103K050BB
+24,Capacitor,C_1U,1uF 16V X5R 0402,Murata,GRM155R61C105KA12D,Mouser,81-GRM155R61C105KA1D,50,0.08,4.00,0402,Medium decoupling,Samsung CL05A105KA5NQNC
+25,Capacitor,C_10U,10uF 10V X5R 0805,Murata,GRM21BR61A106KE19L,Mouser,81-GRM21BR61A106KE1L,20,0.35,7.00,0805,Output filter capacitors,TDK C2012X5R1A106K125AB
+26,Capacitor,C_330N,330nF Film (ADF4159 CP),KEMET,PHE450YB6330JR06L2,Mouser,80-PHE450YB6330JR06,2,0.85,1.70,1210,PLL loop filter,Wima MKS2
+27,Resistor,R_100R,100R 5% 0402,Yageo,RC0402JR-07100RL,Mouser,603-RC0402JR-07100RL,50,0.02,1.00,0402,Wilkinson isolation,Panasonic ERJUP6J101V
+28,Resistor,R_5K1,5.1kOhm 1% 0402,Yageo,RC0402FR-075K1L,Mouser,603-RC0402FR-075K1L,5,0.02,0.10,0402,ADF4159 RSET,Panasonic ERJ2RKF5101X
+29,Resistor,R_22R,22R 5% 0402,Yageo,RC0402JR-0722RL,Mouser,603-RC0402JR-0722RL,10,0.02,0.20,0402,USB D+/D- series resistors,KOA RK73H1ETTP22R0F
+30,Resistor,R_10K,10kOhm 1% 0402,Yageo,RC0402FR-0710KL,Mouser,603-RC0402FR-0710KL,30,0.02,0.60,0402,Pull-ups pulldowns,Panasonic ERJ2RKF1002X
+31,Resistor,R_NTC,NTC Thermistor 10kOhm B=3950,Murata,NCP15WF104F03RC,Mouser,81-NCP15WF104F03RC,2,0.30,0.60,0402,PA heatsink temperature,Vishay NTCS0402E3103FLT
+32,Inductor,L_PA,6.8uH 6A DCR<20mOhm,Wurth Elektronik,74437529068,Mouser,710-74437529068,2,1.45,2.90,SMD 5x5,LT8612 output inductor,TDK SPM6530T-6R8M
+33,Inductor,L_LDO,2.2uH 4A,Wurth Elektronik,74437336022,Mouser,710-74437336022,3,0.85,2.55,SMD 4x4,LT8607 output inductor,Bourns SRR6038-220Y
+34,Inductor,L_RF,4.7uH 2A,Wurth Elektronik,744043004,Mouser,710-744043004,4,0.55,2.20,0805,RF supply choke,Murata LQM2HPN4R7MG0L
+35,LED,LED_GRN,LED Green 3mm 20mA,Wurth Elektronik,151031SS06000,Mouser,710-151031SS06000,5,0.25,1.25,3mm,Power/status indicator,Vishay TLHG5800
+36,LED,LED_RED,LED Red 3mm 20mA,Wurth Elektronik,151033SS06000,Mouser,710-151033SS06000,3,0.25,0.75,3mm,TX active / error indicator,Vishay TLHR5800
+37,Switch,SW_RESET,Tactile Switch 6mm,C&K Components,PTS645SL50SMTR92 LFS,Mouser,611-PTS645SL50SMTR92,2,0.45,0.90,SMD 6mm,Reset button,TE Connectivity FSM2JRT
+38,PCB,PCB1,AERIS Main Control Board 160x100mm,PCBWay/JLCPCB,-,PCBWay,-,2,45.00,90.00,FR4 4-layer,Order 2 for development,JLCPCB alternative
+39,PCB,PCB2,AERIS RF Frontend 100x60mm RO4003C,PCBWay,-,PCBWay,-,2,120.00,240.00,Rogers RO4003C 4-layer,RF board must use RO4003C,Advanced Circuits
+40,PCB,PCB3,AERIS Power Board 100x80mm FR4,JLCPCB,-,JLCPCB,-,2,18.00,36.00,FR4 2-layer,Simple power board,PCBWay
+41,PCB,PCB4,AERIS Phase Shifter Board 120x80mm,PCBWay,-,PCBWay,-,2,130.00,260.00,Rogers/FR4 hybrid 4-layer,Order 2 sets (TX + RX),Advanced Circuits
+42,Mechanical,ENC1,Aluminium Enclosure 300x200x100mm,Hammond Mfg,1455RRBK,Mouser,546-1455RRBK,1,45.00,45.00,Enclosure,Or 3D print in PETG,Bopla Euronord
+43,Mechanical,ANT_MOUNT,Aluminium Angle 100x80x8mm,McMaster-Carr,8975K22,McMaster,8975K22,2,8.50,17.00,Al 6061,Tripod mount L-bracket,local hardware store
+44,Mechanical,HARDWARE,M3 Fastener Kit (screws+nuts+inserts),Bolt Depot,-,Amazon,B08PGQD84F,1,15.00,15.00,Kit,M3x8/12/16 + thread inserts,McMaster-Carr
+45,Cable,CABLE_SMA,RG-405 Semi-rigid SMA-SMA 10cm,Mini-Circuits,086-15SM+,Mouser,140-086-15SM,10,12.50,125.00,Semi-rigid,PA to divider, VCO to PA,Pasternack PE4809
+46,Cable,CABLE_FLEX,2.92mm Flexible Phase-matched 8cm,Mini-Circuits,086-6SMRSM+,Mouser,140-086-6SMRSM,20,18.50,370.00,Flexible 086,Antenna feed cables (phase-matched),Pasternack PE36512
+47,Cable,CABLE_USB,USB-A to Micro-B 0.3m,Tripp Lite,UR050-001,Mouser,037332142215,2,4.50,9.00,USB,MCU to RPi5 control,Amazon basics
+48,Cable,CABLE_POWER,AWG12 2-wire 0.5m,Remington Industries,12UL1007WHT30,Amazon,B01B5O7LDC,1,8.00,8.00,AWG12,24V power cable,local electric supply
+49,Test,TERM_50,SMA 50-ohm Terminator 18GHz,Pasternack,PE6006,Mouser,748-PE6006,5,4.50,22.50,SMA Male,Terminate unused RF ports during test,Amphenol 132167
+50,Test,ATTEN_20,SMA 20dB Attenuator 18GHz,Mini-Circuits,VAT-20+,Mouser,140-VAT-20,3,18.50,55.50,SMA,For loopback testing,API Technologies TFAS-20-18
+51,Test,ATTEN_10,SMA 10dB Attenuator 18GHz,Mini-Circuits,VAT-10+,Mouser,140-VAT-10,3,16.50,49.50,SMA,For power level adjustment,Pasternack PE7005-10
+52,Test,ADAPT_SMA_N,SMA-F to N-M Adapter,Pasternack,PE9077,Mouser,748-PE9077,2,6.50,13.00,Adapter,Connect to spectrum analyzer,Fairview Microwave SM4963
+53,Solder,PASTE,Solder Paste SAC305 T4 50g,Chip Quik,SMD291AX50T5,Mouser,473-SMD291AX50T5,1,18.00,18.00,Jar,Pb-free reflow,Kester EP256
+54,Chemical,FLUX,IPA Flux Remover 400ml,MG Chemicals,4140-400G,Mouser,507-4140-400G,1,12.50,12.50,Spray,PCB cleaning after soldering,Techspray Wondermask
+55,Thermal,THERMAL,Thermal Paste 3W/mK 5g,Fujipoly,XTD-Z,Amazon,B00K33GXJW,1,8.00,8.00,Syringe,PA heatsink interface,Arctic MX-4
+56,Misc,KAPTON,Kapton Tape 12mm x 33m,3M,1218,Amazon,B00NPKD3T0,1,12.00,12.00,Roll,PCB protection and fixtures,generic kapton tape
+57,Misc,HEATSINK,TO-220 Heatsink 10 C/W,Wakefield-Vette,345-8-AB,Mouser,567-345-8-AB,2,3.50,7.00,TO-220,LM7812 heatsink (mandatory!),Aavid 576802B00000G
+58,Misc,FAN,80mm 5V Fan,Nidec,D08A-05TS1 01B,Mouser,670-D08A-05TS1-01B,2,8.50,17.00,80mm,Forced air cooling,SUNON MF80201V1-1000U-A99
+59,Misc,ANTISTATIC,Anti-static Mat + Wriststrap Kit,Rosewill,RHK-M001,Amazon,B01C0R2F3A,1,25.00,25.00,Kit,ESD safety for RF IC handling,generic ESD mat
+60,Misc,OCXO_PSU,5V 1A Power module for OCXO,Recom,R-78E5.0-1.0,Mouser,919-R-78E5.0-1.0,1,4.50,4.50,SMD,OCXO pre-regulator,same as main 5V if ripple OK
